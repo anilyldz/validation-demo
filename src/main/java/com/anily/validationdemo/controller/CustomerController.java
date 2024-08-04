@@ -32,6 +32,9 @@ public class CustomerController {
             @Valid @ModelAttribute("customer") Customer customer,
             BindingResult bindingResult) {
 
+        //Can be used for finding custom error codes like "typeMismatch.customer.freePasses"
+        System.out.println("Binding results: " + bindingResult.toString());
+
         if (bindingResult.hasErrors()){
             return "customer-form";
         } else {
